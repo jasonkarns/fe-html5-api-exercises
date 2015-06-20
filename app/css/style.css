@@ -1,4 +1,15 @@
-.hello {
-  background-color: #efefef;
-  border: 1px solid #dedede;
+main {
+  text-align:center;
+}
+
+#viewer {
+  border: 10px dashed grey;
+  height:300px;
+  width:300px;
+  margin: 2em auto;
+  background-size: contain;
+}
+
+#viewer.draghover {
+  border-color: limegreen;
 }
