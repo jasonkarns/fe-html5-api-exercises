@@ -8,7 +8,9 @@
   <body>
     <h1>File Reading</h1>
     <ol>
-      <li>rather than uploading a chosen image, use the file selector to show the chosen image in the `div#viewer` element</li>
+      <li>use the file selector to show the chosen image in the `div#viewer` element</li>
+      <li>enable dragging and dropping an image onto the viewer instead of using file input</li>
+      <li>give the viewer element some style to indicate it's a droppable target</li>
     </ol>
 
     <main>
