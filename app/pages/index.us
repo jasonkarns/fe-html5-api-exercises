@@ -6,6 +6,35 @@
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
   </head>
   <body>
+    <p>HTML5 History API is <span id="status"></span></p>
+
+    <p>Instructions:</p>
+
+    <p>When clicking on the navigation links, prevent normal navigation.
+      Instead, push a new state object onto the history stack. The state
+      object should have the title (from the link text) and url (from the
+      link href).</p>
+    <p>Clicking on the Current State button should show the current state
+      object (serialized json is fine).</p>
+    <p>When the history is changed (either via browser back button,
+       `history.back()` or `history.forward()`, append a new list item
+       showing the state object's title to the history list below (`ol#history`)</p>
+
+    <nav id="nav">
+      <ul>
+        <li><a href="home">home</a></li>
+        <li><a href="music">music</a></li>
+        <li><a href="video">video</a></li>
+        <li><a href="contact">contact</a></li>
+      </ul>
+    </nav>
+
+    <button id="show-state">Current State</button>
+    <p id="current-state"></p>
+
+    <p>History</p>
+    <ol id="history"> </ol>
+
     <script type="text/javascript" src="<%= js %>"></script>
   </body>
 </html>
