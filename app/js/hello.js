@@ -1,14 +1,13 @@
 var filepicker = document.querySelector("input");
 var viewer = document.querySelector("#viewer");
+var reader = new FileReader();
+
+reader.onload = function(event){
+  viewer.style.backgroundImage = 'url(' + event.target.result + ')';
+};
 
 filepicker.onchange = function (event) {
   event.preventDefault();
-
-  var reader = new FileReader();
-
-  reader.onload = function(event){
-    viewer.style.backgroundImage = 'url(' + event.target.result + ')';
-  };
   reader.readAsDataURL(this.files[0]);
 };
 
@@ -21,12 +20,5 @@ viewer.ondragenter = viewer.ondragleave = function (event) {
 
 viewer.addEventListener('drop', function (event) {
   event.preventDefault();
-
-  var reader = new FileReader();
-
-  reader.onload = function(event){
-    viewer.style.backgroundImage = 'url(' + event.target.result + ')';
-  };
-
   reader.readAsDataURL(event.dataTransfer.files[0]);
 });
