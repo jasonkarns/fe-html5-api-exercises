@@ -1,14 +1,32 @@
-window.helloText = function() {
-  return 'Hello, World!';
+var filepicker = document.querySelector("input");
+var viewer = document.querySelector("#viewer");
+
+filepicker.onchange = function (event) {
+  event.preventDefault();
+
+  var reader = new FileReader();
+
+  reader.onload = function(event){
+    viewer.style.backgroundImage = 'url(' + event.target.result + ')';
+  };
+  reader.readAsDataURL(this.files[0]);
 };
 
-window.hello = function() {
-  html = JST['app/templates/hello.us']({text: helloText()});
-  document.body.innerHTML += html;
+viewer.ondragover = function () { return false; };
+
+viewer.ondragenter = viewer.ondragleave = function (event) {
+  event.preventDefault();
+  this.classList.toggle('draghover');
 };
 
-if(window.addEventListener) {
-  window.addEventListener('DOMContentLoaded', hello, false);
-} else {
-  window.attachEvent('onload', hello);
-}
+viewer.addEventListener('drop', function (event) {
+  event.preventDefault();
+
+  var reader = new FileReader();
+
+  reader.onload = function(event){
+    viewer.style.backgroundImage = 'url(' + event.target.result + ')';
+  };
+
+  reader.readAsDataURL(event.dataTransfer.files[0]);
+});
