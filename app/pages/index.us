@@ -6,6 +6,13 @@
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
   </head>
   <body>
+    <h1>Geo API</h1>
+    <ol>
+      <li>get lat/lon geo coords via Geo API</li>
+      <li>pull in maps image using static maps API</li>
+      <li>revel in your awesomeness</li>
+    </ol>
+    <img id="map" src="" />
     <script type="text/javascript" src="<%= js %>"></script>
   </body>
 </html>
