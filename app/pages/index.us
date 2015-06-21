@@ -6,6 +6,31 @@
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
   </head>
   <body>
+
+    <form id="session">
+      <fieldset>
+        <legend>session</legend>
+        <input name="key" />
+        <input name="value" />
+        <button name="set" value="set">Set</button>
+        <button name="get" value="get">Get</button>
+        <button name="clear" value="clear">Clear Storage</button>
+        <button type="reset">Clear Form</button>
+      </fieldset>
+    </form>
+
+    <form id="local">
+      <fieldset>
+        <legend>local</legend>
+        <input name="key" />
+        <input name="value" />
+        <button name="set" value="set">Set</button>
+        <button name="get" value="get">Get</button>
+        <button name="clear" value="clear">Clear Storage</button>
+        <button type="reset">Clear Form</button>
+      </fieldset>
+    </form>
+
     <script type="text/javascript" src="<%= js %>"></script>
   </body>
 </html>
